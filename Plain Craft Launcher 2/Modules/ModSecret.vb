@@ -15,11 +15,11 @@ Friend Module ModSecret
     '在开源版的注册表与常规版的注册表隔离，以防数据冲突
     Public Const RegFolder As String = "PCLMOD"
     '用于微软登录的 ClientId
-    Public Const OAuthClientId As String = ""
+    Public Const OAuthClientId As String = "8f5c82bb-d3d4-4984-ac64-682366d2ef93"
     'CurseForge API Key
-    Public Const CurseForgeAPIKey As String = ""
+    Public Const CurseForgeAPIKey As String = "98573f01-c0db-4ef0-8403-8e7c2a786f80"
     ' LittleSkin OAuth ClientId
-    Public Const LittleSkinClientId As String = ""
+    Public Const LittleSkinClientId As String = "yQQLJqbWgMjphIaR1EA1GD4sPbKLpowPgPJJe7wC"
 
     Friend Sub SecretOnApplicationStart()
         '提升 UI 线程优先级
