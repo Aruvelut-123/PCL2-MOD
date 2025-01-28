@@ -13,7 +13,7 @@ Friend Module ModSecret
 #Region "杂项"
 
     '在开源版的注册表与常规版的注册表隔离，以防数据冲突
-    Public Const RegFolder As String = "PCLCE"
+    Public Const RegFolder As String = "PCLMOD"
     '用于微软登录的 ClientId
     Public Const OAuthClientId As String = ""
     'CurseForge API Key
@@ -52,15 +52,15 @@ Friend Module ModSecret
         End If
         '开源版本提示
         If Setup.Get("UiLauncherCEHint") Then
-            MyMsgBox($"你正在使用来自 PCL-Community 的 PCL2 社区版本，遇到问题请不要向官方仓库反馈！
-PCL-Community 及其成员与龙腾猫跃无从属关系，且均不会为您的使用做担保。
+            MyMsgBox($"你正在使用来自 Baymaxawa 的 PCL2 修改版本，遇到问题请不要向官方或社区版仓库反馈！
+Baymaxawa 与龙腾猫跃及 PCL-Community 无从属关系，且均不会为您的使用做担保。
 
 该版本中暂时无法使用以下特性：
-- 更新与联网通知：在做了在做了.jpg
-- 主题切换：这是需要赞助解锁的纪念性质的功能，社区版不会制作
+- 更新与联网通知：暂时不添加(在做了在做了.jpg)
+- 主题切换：准备删除(这是需要赞助解锁的纪念性质的功能，社区版不会制作)
 
 该版本中的以下特性与原版有所区别：
-- 百宝箱：主线分支没有提供相关内容", "社区版本说明", "我知道了")
+- 百宝箱：主线分支没有提供相关内容(准备添加)", "修改版本说明", "我知道了")
         End If
     End Sub
 
@@ -412,7 +412,7 @@ PCL-Community 及其成员与龙腾猫跃无从属关系，且均不会为您的
         Dim LatestVersion As String = Nothing
         RunInNewThread(Sub()
                            Try
-                               LatestReleaseInfoJson = GetJson(NetRequestRetry("https://api.github.com/repos/PCL-Community/PCL2-CE/releases/latest", "GET", "", "application/x-www-form-urlencoded"))
+                               LatestReleaseInfoJson = GetJson(NetRequestRetry("https://api.github.com/repos/Aruvelut-123/PCL2-MOD/releases/latest", "GET", "", "application/x-www-form-urlencoded"))
                                LatestVersion = LatestReleaseInfoJson("tag_name").ToString
                                If Not LatestVersion = VersionBaseName Then
                                    If Not Environment.OSVersion.Version.ToString().Substring(0, 4) = "10.0" AndAlso Not LatestVersion.Substring(0, 4) = "2.9." Then
@@ -432,7 +432,7 @@ PCL-Community 及其成员与龙腾猫跃无从属关系，且均不会为您的
                        End Sub)
     End Sub
     Public Sub UpdateStart(VersionStr As String, Slient As Boolean, Optional ReceivedKey As String = Nothing, Optional ForceValidated As Boolean = False)
-        Dim DlLink As String = "https://github.com/PCL-Community/PCL2-CE/releases/download/" + VersionStr + "/PCL2_CE.exe"
+        Dim DlLink As String = "https://github.com/Aruvelut-123/PCL2-MOD/releases/download/" + VersionStr + "/PCL2_MOD.exe"
         Dim DlTargetPath As String = Path + "PCL\Plain Craft Launcher 2.exe"
         RunInNewThread(Sub()
                            Try

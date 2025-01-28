@@ -5,9 +5,9 @@
         PanBack.ScrollToHome()
         PanScroll = PanBack '不知道为啥不能在 XAML 设置
         PanLog.Visibility = If(ModeDebug, Visibility.Visible, Visibility.Collapsed)
-        '社区版提示
+        '修改版提示
         PanHint.Visibility = If(Setup.Get("UiLauncherCEHint"), Visibility.Visible, Visibility.Collapsed)
-        LabHint1.Text = "社区版包含未在官方主线版本发布的功能，仅用于尝鲜。请不要向官方仓库反馈社区版的问题哦！"
+        LabHint1.Text = "修改版包含 Baymaxawa 本人所需制作的一些功能，仅用于尝鲜。请不要向官方或社区版库反馈修改版的问题哦！"
         LabHint2.Text = $"若要永久隐藏此提示，请自行查阅代码中的相关部分。"
     End Sub
 

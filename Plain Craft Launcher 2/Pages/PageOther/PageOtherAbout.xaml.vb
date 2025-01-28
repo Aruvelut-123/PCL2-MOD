@@ -31,10 +31,4 @@
         DonateCodeInput()
     End Sub
 
-#If DEBUG Then
-    Private Sub BtnDonateOutput_Click(sender As Object, e As EventArgs) Handles BtnDonateOutput.Click
-        DonateCodeGenerate()
-    End Sub
-#End If
-
 End Class

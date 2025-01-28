@@ -12,26 +12,26 @@ Public Module ModBase
 #Region "声明"
 
     '下列版本信息由更新器自动修改
-    Public Const VersionBaseName As String = "2.9.5" '不含分支前缀的显示用版本名
-    Public Const VersionStandardCode As String = "2.9.5." & VersionBranchCode '标准格式的四段式版本号
+    Public Const VersionBaseName As String = "0.0.0" '不含分支前缀的显示用版本名
+    Public Const VersionStandardCode As String = "0.0.0." & VersionBranchCode '标准格式的四段式版本号
     Public Const CommitHash As String = "native" 'Commit Hash，由 GitHub Workflow 自动替换
     Public CommitHashShort As String = If(CommitHash = "native", "native", CommitHash.Substring(0, 7)) 'Commit Hash，取前 7 位
-    Public Const UpstreamVersion As String = "2.8.12" '上游版本
+    Public Const UpstreamVersion As String = "CE 2.9.5-150-g66c902d" '上游版本
 #If RELEASE Then
-    Public Const VersionCode As Integer = 354 'Release
+    Public Const VersionCode As Integer = 1 'Release
 #Else
-    Public Const VersionCode As Integer = 354 'Snapshot
+    Public Const VersionCode As Integer = 1 'Snapshot
 #End If
     '自动生成的版本信息
     Public Const VersionDisplayName As String = VersionBranchName & " " & VersionBaseName
 #If RELEASE Then
-    Public Const VersionBranchName As String = "CE"
-    Public Const VersionBranchCode As String = "0"
+    Public Const VersionBranchName As String = "MOD"
+    Public Const VersionBranchCode As String = "1"
 #ElseIf BETA Then
-    Public Const VersionBranchName As String = "CE Preview"
+    Public Const VersionBranchName As String = "MOD Preview"
     Public Const VersionBranchCode As String = "50"
 #Else
-    Public Const VersionBranchName As String = "CE Debug"
+    Public Const VersionBranchName As String = "MOD Dev"
     Public Const VersionBranchCode As String = "100"
 #End If
 

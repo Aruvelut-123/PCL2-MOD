@@ -31,7 +31,7 @@ Public Class PageOtherVote
     End Function
 
     Public Shared Sub VoteListGet(Task As LoaderTask(Of String, List(Of Vote)))
-        Dim content = NetGetCodeByRequestRetry("https://github.com/Hex-Dragon/PCL2/discussions/categories/%E5%8A%9F%E8%83%BD%E6%8A%95%E7%A5%A8?discussions_q=is%3Aopen+category%3A%E5%8A%9F%E8%83%BD%E6%8A%95%E7%A5%A8+sort%3Atop", BackupUrl:="https://kkgithub.com/Hex-Dragon/PCL2/discussions/categories/%E5%8A%9F%E8%83%BD%E6%8A%95%E7%A5%A8?discussions_q=is%3Aopen+category%3A%E5%8A%9F%E8%83%BD%E6%8A%95%E7%A5%A8+sort%3Atop", UseBrowserUserAgent:=True)
+        Dim content = NetGetCodeByRequestRetry("https://github.com/Aruvelut-123/PCL2-MOD/discussions/categories/%E5%8A%9F%E8%83%BD%E6%8A%95%E7%A5%A8?discussions_q=is%3Aopen+category%3A%E5%8A%9F%E8%83%BD%E6%8A%95%E7%A5%A8+sort%3Atop", BackupUrl:="https://kkgithub.com/Aruvelut-123/PCL2-MOD/discussions/categories/%E5%8A%9F%E8%83%BD%E6%8A%95%E7%A5%A8?discussions_q=is%3Aopen+category%3A%E5%8A%9F%E8%83%BD%E6%8A%95%E7%A5%A8+sort%3Atop", UseBrowserUserAgent:=True)
         If content Is Nothing Then Throw New Exception("空内容")
 
         Dim pattern As String = "<div class=""d-flex flex-auto flex-items-start"">(.*?)<svg aria-hidden=""true"" height=""16"" viewBox=""0 0 16 16"" version=""1.1"" width=""16"" data-view-component=""true"" class=""octicon octicon-comment color-fg-muted mr-1"">"

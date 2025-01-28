@@ -12,113 +12,10 @@ Public Class FormMain
         Dim FeatureList As New List(Of KeyValuePair(Of Integer, String))
         '统计更新日志条目
 #If RELEASE Then
-        If LastVersion < 354 Then
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(4, "支持识别剪贴板资源链接并提示跳转"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "允许禁用 Java Wrapper"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "修复版本设置查看截图可能崩溃的问题"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "修复本体更新可能失败的问题"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "添加 Java 细致搜索开关"))
-            FeatureCount += 7
-            BugCount += 4
-        End If
-        If LastVersion < 353 Then
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(4, "放弃对 Windows 10 1607 以下版本系统的支持 - 前期准备"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "优化关于页面，查看源代码按钮可以精确到具体提交了"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "允许指定 HTTP 代理"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "百宝箱支持清理游戏垃圾"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "标题栏添加社区版标识"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "反馈链接修改为社区版仓库链接"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "修复语言标头未遵循规范的问题"))
-            FeatureCount += 4
-            BugCount += 2
-        End If
-        If LastVersion < 352 Then 'Release 2.9.3
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "完整支持 LittleSkin OAuth 登录"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "恢复了百宝箱的部分内容"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "修复了 WebP 图片无法加载问题"))
-            FeatureCount += 6
-            BugCount += 4
-        End If
-        If LastVersion < 350 Then 'Release 2.9.2
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(5, "支持下载资源包和光影包"))
-        End If
-        If LastVersion < 349 Then 'Release 2.9.1
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(4, "添加了本体更新（实验性）"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "关于页面新增了详细的版本信息"))
-        End If
-        If LastVersion < 347 Then 'Release 2.8.12
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(4, "Mod 管理页面添加下载 Mod、安装 Mod 选项"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(4, "Mod 详情页面支持按加载器、游戏版本进行分类和筛选"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "支持安装同时包含 modpack 文件和启动器的懒人包"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "优化整合包导入流程"))
-            FeatureCount += 43
-            BugCount += 37
-        End If
-        If LastVersion < 342 Then 'Release 2.8.9
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(4, "支持下载原版服务端"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "本地 Mod 的标题支持选择显示 Mod 原始文件名"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复搜索后启用/禁用 Mod 时出错的 Bug"))
-            FeatureCount += 17
-            BugCount += 13
-        End If
-        If LastVersion < 340 Then 'Release 2.8.8
-            If LastVersion = 338 Then FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复数个与新正版登录相关的严重 Bug"))
-            FeatureCount += 3
-            BugCount += 7
-        End If
-        If LastVersion < 338 Then 'Release 2.8.7
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(4, "使用新的正版登录方式，以提高安全性"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "优化安装整合包、检索 Mod 的稳定性"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复无法加载部分 Mod 的图标的 Bug"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复在 Mod 管理页面删除 Mod 导致报错的 Bug"))
-            FeatureCount += 11
-            BugCount += 21
-        End If
-        If LastVersion < 336 Then 'Release 2.8.6
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(4, "下载 Mod 时会使用 MCIM 国内镜像源"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(4, "Mod 管理页面允许筛选可更新/启用/禁用的 Mod"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "打开 PCL 时会自动安装同目录下的 modpack.zip"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "爱发电域名迁移至 afdian.com"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复 1.20.1+ 离线登录使用正版皮肤时无法保存游戏的 Bug"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复安装的 1.14~1.15 Forge+OptiFine 无法进入世界的 Bug"))
-            FeatureCount += 19
-            BugCount += 24
-        End If
-        If LastVersion < 332 Then 'Release 2.8.3
-            If LastVersion = 330 Then FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "修复部分玩家无法启动 MC 的 Bug"))
-        End If
-        If LastVersion < 330 Then 'Release 2.8.2
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(5, "NeoForge 兼容与自动安装"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "支持编译、运行 PCL 开源代码"))
-            FeatureCount += 15
-            BugCount += 22
-        End If
-        If LastVersion < 326 Then 'Release 2.7.4
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "会自动隐藏明显不可用的自动安装选项"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "优化正版登录流程和 MC 性能"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复正版登录时弹出脚本错误提示的 Bug"))
-            FeatureCount += 17
-            BugCount += 19
-        End If
-        If LastVersion < 323 Then 'Release 2.7.3
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "添加 启动游戏前进行内存优化 设置"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "优化 MC 性能"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复安装 OptiFine 有概率失败的 Bug"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复启动 Fabric 1.20.5+ 时无法正确选择 Java 的 Bug"))
-            FeatureCount += 22
-            BugCount += 21
-        End If
-        If LastVersion < 321 Then 'Release 2.7.1
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复启动部分整合包导致设置丢失的 Bug"))
-            BugCount += 1
-        End If
-        If LastVersion < 319 Then 'Release 2.7.0
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(5, "支持更新 Mod"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "支持查看可更新的 Mod 的更新日志"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "支持滑动鼠标快速选中、取消选中多个 Mod"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复无法启动 MC 24w14a+ 的 Bug"))
-            FeatureCount += 10
-            BugCount += 10
+        If LastVersion < 1 Then 'Release 0.0.0
+            FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "添加部分修改"))
+            FeatureCount += 0
+            BugCount += 0
         End If
 #Else
         '5：          FEAT+
@@ -126,153 +23,16 @@ Public Class FormMain
         '3：BUG+ IMP* FEAT-
         '2：BUG* IMP-
         '1：BUG-
-        If LastVersion < 354 Then
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(4, "支持识别剪贴板资源链接并提示跳转"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "允许禁用 Java Wrapper"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "修复版本设置查看截图可能崩溃的问题"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "修复本体更新可能失败的问题"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "添加 Java 细致搜索开关"))
-            FeatureCount += 7
-            BugCount += 4
-        End If
-        If LastVersion < 353 Then
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(4, "放弃对 Windows 10 1607 以下版本系统的支持 - 前期准备"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "优化关于页面，查看源代码按钮可以精确到具体提交了"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "允许指定 HTTP 代理"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "百宝箱支持清理游戏垃圾"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "标题栏添加社区版标识"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "反馈链接修改为社区版仓库链接"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "修复语言标头未遵循规范的问题"))
-            FeatureCount += 4
-            BugCount += 2
-        End If
-        If LastVersion < 352 Then 'Snapshot 2.9.3
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "完整支持 LittleSkin OAuh 登录"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "恢复了百宝箱的部分内容"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "修复了 WebP 图片无法加载问题"))
-            FeatureCount += 6
-            BugCount += 4
-        End If
-        If LastVersion < 350 Then 'Snapshot 2.9.2
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(5, "支持下载资源包和光影包"))
-        End If
-        If LastVersion < 349 Then 'Snapshot 2.9.1
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(4, "添加了本体更新（实验性）"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "关于页面新增了详细的版本信息"))
-        End If
-        If LastVersion < 346 Then 'Snapshot 2.8.12
-            If LastVersion = 345 Then FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复帮助页面报错的 Bug"))
-        End If
-        If LastVersion < 345 Then 'Snapshot 2.8.11
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(4, "Mod 管理页面添加下载 Mod、安装 Mod 选项"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(4, "Mod 详情页面支持按加载器、游戏版本进行分类和筛选"))
-            FeatureCount += 23
-            BugCount += 21
-        End If
-        If LastVersion < 343 Then 'Snapshot 2.8.10
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "支持安装同时包含 modpack 文件和启动器的懒人包"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "优化整合包导入流程"))
-            FeatureCount += 20
-            BugCount += 16
-        End If
-        If LastVersion < 341 Then 'Snapshot 2.8.9
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(4, "支持下载原版服务端"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "本地 Mod 的标题支持选择显示 Mod 原始文件名"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复搜索后启用/禁用 Mod 时出错的 Bug"))
-            FeatureCount += 17
-            BugCount += 13
-        End If
-        If LastVersion < 339 Then 'Snapshot 2.8.8
-            If LastVersion = 337 Then FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复数个与新正版登录相关的严重 Bug"))
-            FeatureCount += 3
-            BugCount += 7
-        End If
-        If LastVersion < 337 Then 'Snapshot 2.8.7
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(4, "使用新的正版登录方式，以提高安全性"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "优化安装整合包、检索 Mod 的稳定性"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复无法加载部分 Mod 的图标的 Bug"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复在 Mod 管理页面删除 Mod 导致报错的 Bug"))
-            FeatureCount += 11
-            BugCount += 21
-        End If
-        If LastVersion < 335 Then 'Snapshot 2.8.6
-            BugCount += 2
-        End If
-        If LastVersion < 334 Then 'Snapshot 2.8.5
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(4, "Mod 管理页面允许筛选可更新/启用/禁用的 Mod"))
-            If LastVersion = 333 Then
-                FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复无法安装愚人节和预发布版本的 Bug"))
-                FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复无法导出错误报告的 Bug"))
-            End If
-            FeatureCount += 6
-            BugCount += 7
-        End If
-        If LastVersion < 333 Then 'Snapshot 2.8.4
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(4, "下载 Mod 时会使用 MCIM 国内镜像源"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "打开 PCL 时会自动安装同目录下的 modpack.zip"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "爱发电域名迁移至 afdian.com"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复 1.20.1+ 离线登录使用正版皮肤时无法保存游戏的 Bug"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复安装的 1.14~1.15 Forge+OptiFine 无法进入世界的 Bug"))
-            FeatureCount += 13
-            BugCount += 17
-        End If
-        If LastVersion < 331 Then 'Snapshot 2.8.3
-            If LastVersion = 329 Then FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "修复部分玩家无法启动 MC 的 Bug"))
-        End If
-        If LastVersion < 329 Then 'Snapshot 2.8.2
-            If LastVersion >= 327 Then
-                FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复无法安装 Beta 版 NeoForge 的整合包的 Bug"))
-                FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复自动安装无法选择部分 OptiFine 的 Bug"))
-            End If
-            FeatureCount += 4
-            BugCount += 8
-        End If
-        If LastVersion < 328 Then 'Snapshot 2.8.1
-            If LastVersion = 327 Then FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复无法安装 Forge 1.12.2- 的 Bug"))
-            If LastVersion = 327 Then FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复无法输入解锁码的 Bug"))
-            If LastVersion = 327 Then BugCount += 1
-        End If
-        If LastVersion < 327 Then 'Snapshot 2.8.0
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(5, "NeoForge 兼容与自动安装"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "支持编译、运行 PCL 开源代码"))
-            FeatureCount += 11
-            BugCount += 14
-        End If
-        If LastVersion < 325 Then 'Snapshot 2.7.4
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "会自动隐藏明显不可用的自动安装选项"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(2, "优化正版登录流程和 MC 性能"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复正版登录时弹出脚本错误提示的 Bug"))
-            FeatureCount += 17
-            BugCount += 19
-        End If
-        If LastVersion < 324 Then 'Snapshot 2.7.3
-            FeatureCount += 4
-            BugCount += 3
-        End If
-        If LastVersion < 322 Then 'Snapshot 2.7.2
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "添加 启动游戏前进行内存优化 设置"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复安装 OptiFine 有概率失败的 Bug"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复启动 Fabric 1.20.5+ 时无法正确选择 Java 的 Bug"))
-            FeatureCount += 18
-            BugCount += 18
-        End If
-        If LastVersion < 320 Then 'Snapshot 2.7.1
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复启动部分整合包导致设置丢失的 Bug"))
-            BugCount += 1
-        End If
-        If LastVersion < 318 Then 'Snapshot 2.7.0
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(5, "支持更新 Mod"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "支持查看可更新的 Mod 的更新日志"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(3, "支持滑动鼠标快速选中、取消选中多个 Mod"))
-            FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "修复无法启动 MC 24w14a+ 的 Bug"))
-            FeatureCount += 10
-            BugCount += 10
+        If LastVersion < 1 Then 'Release 0.0.0
+            FeatureList.Add(New KeyValuePair(Of Integer, String)(1, "添加部分修改"))
+            FeatureCount += 0
+            BugCount += 0
         End If
 #End If
         '整理更新日志文本
         Dim ContentList As New List(Of String)
         Dim SortedFeatures = Sort(FeatureList, Function(Left, Right) Left.Key > Right.Key)
-        If Not SortedFeatures.Any() AndAlso FeatureCount = 0 AndAlso BugCount = 0 Then ContentList.Add("Pigeon0v0 忘记写更新日志啦！可以去提醒他一下……")
+        If Not SortedFeatures.Any() AndAlso FeatureCount = 0 AndAlso BugCount = 0 Then ContentList.Add("Baymaxawa 忘记写更新日志啦！可以去提醒他一下……")
         For i = 0 To Math.Min(9, SortedFeatures.Count - 1) '最多取 10 项
             ContentList.Add(SortedFeatures(i).Value)
         Next
@@ -288,7 +48,7 @@ Public Class FormMain
         RunInNewThread(
         Sub()
             If MyMsgBox(Content, "PCL 已更新至 " & VersionDisplayName, "确定", "完整更新日志") = 2 Then
-                OpenWebsite("https://github.com/PCL-Community/PCL2-CE/releases")
+                OpenWebsite("https://github.com/Aruvelut-123/PCL2-MOD/releases")
             End If
         End Sub, "UpdateLog Output")
     End Sub
@@ -455,14 +215,6 @@ Public Class FormMain
     '根据打开次数触发的事件
     Private Sub RunCountSub()
         Setup.Set("SystemCount", Setup.Get("SystemCount") + 1)
-#If Not BETA Then
-        If Setup.Get("SystemCount") >= 99 Then
-            If ThemeUnlock(6, False) Then
-                MyMsgBox("你已经使用了 99 次 PCL 啦，感谢你长期以来的支持！" & vbCrLf &
-                         "隐藏主题 铁杆粉 已解锁！", "提示")
-            End If
-        End If
-#End If
     End Sub
     '升级与降级事件
     Private Sub UpgradeSub(LastVersionCode As Integer)
@@ -491,22 +243,6 @@ Public Class FormMain
             UnlockedTheme.AddRange(New List(Of String)(Setup.Get("UiLauncherThemeHide").ToString.Split("|")))
             UnlockedTheme.AddRange(New List(Of String)(Setup.Get("UiLauncherThemeHide2").ToString.Split("|")))
             Setup.Set("UiLauncherThemeHide2", Join(UnlockedTheme.Distinct.ToList, "|"))
-        End If
-        '重置欧皇彩
-        If LastVersionCode <= 115 AndAlso Setup.Get("UiLauncherThemeHide2").ToString.Split("|").Contains("13") Then
-            Dim UnlockedTheme As New List(Of String)(Setup.Get("UiLauncherThemeHide2").ToString.Split("|"))
-            UnlockedTheme.Remove("13")
-            Setup.Set("UiLauncherThemeHide2", Join(UnlockedTheme, "|"))
-            MyMsgBox("由于新版 PCL 修改了欧皇彩的解锁方式，你需要重新解锁欧皇彩。" & vbCrLf &
-                     "多谢各位的理解啦！", "重新解锁提醒")
-        End If
-        '重置滑稽彩
-        If LastVersionCode <= 152 AndAlso Setup.Get("UiLauncherThemeHide2").ToString.Split("|").Contains("12") Then
-            Dim UnlockedTheme As New List(Of String)(Setup.Get("UiLauncherThemeHide2").ToString.Split("|"))
-            UnlockedTheme.Remove("12")
-            Setup.Set("UiLauncherThemeHide2", Join(UnlockedTheme, "|"))
-            MyMsgBox("由于新版 PCL 修改了滑稽彩的解锁方式，你需要重新解锁滑稽彩。" & vbCrLf &
-                     "多谢各位的理解啦！", "重新解锁提醒")
         End If
         '移动自定义皮肤
         If LastVersionCode <= 161 AndAlso File.Exists(Path & "PCL\CustomSkin.png") AndAlso Not File.Exists(PathAppdata & "CustomSkin.png") Then
@@ -623,7 +359,7 @@ Public Class FormMain
         If ReturnCode = Result.Exception Then
             If Not IsLogShown Then
                 FeedbackInfo()
-                Log("请在 https://github.com/PCL-Community/PCL2-CE/issues 提交错误报告，以便于社区解决此问题！（这也有可能是原版 PCL 的问题）")
+                Log("请在 https://github.com/Aruvelut-123/PCL2-MOD/issues 提交错误报告，以便于社区解决此问题！（这也有可能是原版 PCL 或社区版的问题）")
                 IsLogShown = True
                 ShellOnly(Path & "PCL\Log1.txt")
             End If
